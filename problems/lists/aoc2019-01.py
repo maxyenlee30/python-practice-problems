@@ -17,9 +17,10 @@ def part1(numbers):
 
     Returns an integer
     """
-
-    ### Replace with your code
-    return None
+    total = 0
+    for val in numbers:
+        total += val // 3 - 2
+    return total
 
 
 def part2(numbers):
@@ -44,22 +45,3 @@ def part2(numbers):
 ###        to the functions above        ###
 ###                                      ###
 ############################################
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print(f"USAGE: python3 {os.path.basename(sys.argv[0])} <INPUT FILE>")
-        sys.exit(1)
-
-    input_file = sys.argv[1]
-
-    if not os.path.exists(input_file):
-        print(f"ERROR: No such file: {input_file}")
-        sys.exit(1)
-
-    with open(input_file) as f:
-        numbers = [int(x) for x in f.read().split()]
-
-    print(f"Part 1:", part1(numbers))
-
-    # Uncomment the following line when you're ready to work on Part 2
-    #print(f"Part 2:", part2(numbers))

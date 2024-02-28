@@ -7,7 +7,9 @@ def replace(lst, replacee, replacer):
       replacer: the element to replace replacee with
     Returns: None, modifies lst in-place
     """
-
+    for i, val in enumerate(lst):
+        if val == replacee:
+            lst[i] = replacer
     ### Replace pass with your code
     pass
 

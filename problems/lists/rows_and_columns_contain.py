@@ -9,7 +9,45 @@ def rows_and_columns_contain(lst, target):
     """
 
     ### Replace pass with your code
-    pass
+    """transposed = []
+    for i in range(len(lst[0])):
+                   transposed.append([])
+    for i, row in enumerate(lst):
+        row_check = False
+        for j, val in enumerate(row):
+            transposed[j].append(val)
+            if val == target:
+                row_check = True
+        if not row_check:
+            return False
+    for row in transposed:
+        row_check = False
+        for val in row:
+            if val == target:
+                row_check = True
+        if not row_check:
+            return False
+    return True"""
+    # make a list to check cols
+    col_checks = []
+    for i in range(len(lst[0])):
+        col_checks.append(False)
+    # iterate through list
+    for i, row in enumerate(lst):
+        row_check = False
+        for j, val in enumerate(row):
+            if val == target:
+                # validates the row and the current column
+                row_check = True
+                col_checks[j] = True
+        # fails if nothing in row worked
+        if not row_check:
+            return False
+    # checks cols to make sure all were validated
+    for val in col_checks:
+        if not val:
+            return False
+    return True
 
 
 #############################################################

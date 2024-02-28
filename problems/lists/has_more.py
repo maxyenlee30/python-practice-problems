@@ -7,7 +7,15 @@ def has_more(lst1, lst2, target):
       target: the target value
     Returns: True if lst1 contains more of target, False otherwise
     """
-
+    count1 = 0
+    count2 = 0
+    for val in lst1:
+        if val == target:
+            count1 += 1
+    for val in lst2:
+        if val == target:
+            count2 += 1
+    return count1 > count2
     ### Replace pass with your code
     pass
 
