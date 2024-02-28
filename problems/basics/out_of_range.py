@@ -4,7 +4,10 @@ def out_of_range(x, lb, ub):
 
     ### YOUR CODE GOES HERE
     # Replace "None" with the correct expression
-    r = None
+    if lb <= x <= ub:
+        r = False
+    else:
+        r = True
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return r
